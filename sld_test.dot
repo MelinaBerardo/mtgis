@@ -1,0 +1,124 @@
+digraph G {
+  nodesep=1.5;
+  rankdir="LR"
+  splines=line;
+  clusterrank=local;
+  margin=0
+  compound=true;
+  node[width=1, shape=none];
+  edge[style=solid, arrowhead=none]
+  
+
+    subgraph cluster_splice1{
+        splines=line;
+        n100 [
+              label=<
+            <TABLE BORDER="1" CELLBORDER="0" CELLPADDING="0" CELLSPACING="0">
+            <TR><TD COLSPAN="3" CELLPADDING="10">Cierre 1<BR/>256</TD></TR>
+            <TR><TD PORT="p1L"></TD><TD  BORDER="1" WIDTH="40">1</TD><TD PORT="p1R"></TD></TR>
+            <TR><TD PORT="p2L"></TD><TD  BORDER="1" WIDTH="40">2</TD><TD PORT="p2R"></TD></TR>
+            <TR><TD PORT="p3L"></TD><TD  BORDER="1" WIDTH="40">3</TD><TD PORT="p3R"></TD></TR>
+            <TR><TD PORT="p4L"></TD><TD  BORDER="1" WIDTH="40">4</TD><TD PORT="p4R"></TD></TR>
+            <TR><TD PORT="p5L"></TD><TD  BORDER="1" WIDTH="40">5</TD><TD PORT="p5R"></TD></TR>
+            <TR><TD PORT="p6L"></TD><TD  BORDER="1" WIDTH="40">6</TD><TD PORT="p6R"></TD></TR>
+        </TABLE>>
+            ];
+        s1c1in [label="", shape=point]
+        s1c1out [label="", shape=point]
+        s1c2out [label="", shape=point]
+    
+         { 
+             s1c1in -> n100:p1L:e;
+             s1c1in -> n100:p2L:e;
+             s1c1in -> n100:p3L:e;
+             s1c1in -> n100:p4L:e;
+             s1c1in -> n100:p5L:e;
+             s1c1in -> n100:p6L:e;
+             n100:p1R:w -> s1c1out;
+             n100:p2R:w -> s1c1out;
+             n100:p3R:w -> s1c1out;
+             n100:p4R:w -> s1c2out;
+             n100:p5R:w -> s1c2out;
+             n100:p6R:w -> s1c2out;
+         }
+   }
+
+
+   subgraph cluster_splice2{ 
+     splines=line;
+     #label = "Layer 1";
+     n200 [
+      label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLPADDING="0" CELLSPACING="0">
+    <TR><TD COLSPAN="3" CELLPADDING="10">Cierre 2<BR/>256</TD></TR>
+    <TR><TD PORT="p1L"></TD><TD  BORDER="1" WIDTH="40">1</TD><TD PORT="p1R"></TD></TR>
+    <TR><TD PORT="p2L"></TD><TD  BORDER="1" WIDTH="40">2</TD><TD PORT="p2R"></TD></TR>
+    <TR><TD PORT="p3L"></TD><TD  BORDER="1" WIDTH="40">3</TD><TD PORT="p3R"></TD></TR>
+    <TR><TD PORT="p4L"></TD><TD  BORDER="1" WIDTH="40">4</TD><TD PORT="p4R"></TD></TR>
+    <TR><TD PORT="p5L"></TD><TD  BORDER="1" WIDTH="40">5</TD><TD PORT="p5R"></TD></TR>
+    <TR><TD PORT="p6L"></TD><TD  BORDER="1" WIDTH="40">6</TD><TD PORT="p6R"></TD></TR>
+</TABLE>>
+    ];
+    s2c1in [label="", shape=point]
+    s2c1out [label="", shape=point]
+    s2c2out [label="", shape=point]
+
+     { 
+         s2c1in -> n200:p1L:e;
+         s2c1in -> n200:p2L:e;
+         s2c1in -> n200:p3L:e;
+         s2c1in -> n200:p4L:e;
+         s2c1in -> n200:p5L:e;
+         s2c1in -> n200:p6L:e;
+         n200:p1R:w -> s2c1out;
+         n200:p2R:w -> s2c1out;
+         n200:p3R:w -> s2c1out;
+         n200:p4R:w -> s2c2out;
+         n200:p5R:w -> s2c2out;
+         n200:p6R:w -> s2c2out;
+     }
+   }
+
+
+   subgraph cluster_splice3{ 
+     splines=line;
+     n300 [
+     label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLPADDING="0" CELLSPACING="0">
+    <TR><TD COLSPAN="3" CELLPADDING="10">Cierre 3<BR/>256</TD></TR>
+    <TR><TD PORT="p1L"></TD><TD  BORDER="1" WIDTH="40">1</TD><TD PORT="p1R"></TD></TR>
+    <TR><TD PORT="p2L"></TD><TD  BORDER="1" WIDTH="40">2</TD><TD PORT="p2R"></TD></TR>
+    <TR><TD PORT="p3L"></TD><TD  BORDER="1" WIDTH="40">3</TD><TD PORT="p3R"></TD></TR>
+    <TR><TD PORT="p4L"></TD><TD  BORDER="1" WIDTH="40">4</TD><TD PORT="p4R"></TD></TR>
+    <TR><TD PORT="p5L"></TD><TD  BORDER="1" WIDTH="40">5</TD><TD PORT="p5R"></TD></TR>
+    <TR><TD PORT="p6L"></TD><TD  BORDER="1" WIDTH="40">6</TD><TD PORT="p6R"></TD></TR>
+</TABLE>>
+    ];
+    s3c1in [label="", shape=point]
+    s3c1out [label="", shape=point]
+    s3c2out [label="", shape=point]
+
+     { 
+         s3c1in -> n300:p1L:e;
+         s3c1in -> n300:p2L:e;
+         s3c1in -> n300:p3L:e;
+         s3c1in -> n300:p4L:e;
+         s3c1in -> n300:p5L:e;
+         s3c1in -> n300:p6L:e;
+         n300:p1R:w -> s3c1out;
+         n300:p2R:w -> s3c1out;
+         n300:p3R:w -> s3c1out;
+         n300:p4R:w -> s3c2out;
+         n300:p5R:w -> s3c2out;
+         n300:p6R:w -> s3c2out;
+     }
+   }
+ 
+
+ 
+ edge[style=solid, penwidth=1, splines=ortho];
+
+ s1c1out -> s2c1in [xlabel="cable 1",splines=ortho, minlen=5]
+ s1c2out -> s3c1in [xlabel="cable 2",splines=ortho, minlen=5]
+
+}
